@@ -14,14 +14,13 @@ import java.nio.charset.StandardCharsets;
 
 @Log
 @RequiredArgsConstructor
-class IBGEConsumer implements Consumer{
+class IBGEConsumer implements Consumer {
 
     private final ConnectionService connectionService;
 
     @Override
     public <T> T retrieveData(String urlParameter, Type typeOfT) {
-        @Cleanup(value = "disconnect")
-        HttpsURLConnection connector = connectionService.connect(urlParameter);
+        @Cleanup(value = "disconnect") HttpsURLConnection connector = connectionService.connect(urlParameter);
 
         StringBuilder response = new StringBuilder();
 

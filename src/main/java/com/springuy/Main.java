@@ -10,7 +10,7 @@ public class Main {
 
         ConnectionServiceInjector injector = new IBGEConnectionServiceInjector();
         Consumer app = injector.getConsumer();
-        
+
         Object data = app.retrieveData("/paises/indicadores/77819|77820", Object.class);
     }
 }
